@@ -16,7 +16,7 @@ Note that this is not a generic configuration, and comes with deal-breaking draw
 - Enable IOMMU
 
 ```sh
-sudo grubby --args="rd.driver.blacklist=nouveau modprobe.blacklist=nouveau rd.driver.pre=vfio-pci iommu=pt intel_iommu=on kvm.ignore_msrs=1" --update-kernel=/boot/vmlinuz-$(uname -r)
+sudo grubby --args="rd.driver.blacklist=nouveau modprobe.blacklist=nouveau rd.driver.pre=vfio-pci iommu=pt intel_iommu=on kvm.ignore_msrs=1 allow_unsafe_interrupts=1" --update-kernel=/boot/vmlinuz-$(uname -r)
 ```
 
 ### Adding VFIO Kernel Drivers
